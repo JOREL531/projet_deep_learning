@@ -1,6 +1,6 @@
 # Projet Deep Learning
 
-Projet de prédiction de clicks avec des modèles de Machine Learning (LightGBM, RandomForest, XGBoost).
+Projet de prédiction de clics avec des modèles de Machine Learning (LightGBM, RandomForest, XGBoost).
 
 ## Installation
 
