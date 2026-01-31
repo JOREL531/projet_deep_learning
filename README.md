@@ -1,5 +1,7 @@
 # Projet Deep Learning
 
+Projet de prédiction de clicks avec des modèles de Machine Learning (LightGBM, RandomForest, XGBoost).
+
 ## Installation
 
 ### Prérequis
@@ -26,7 +28,6 @@ source $(poetry env info --path)/bin/activate
 
 Ou utiliser directement :
 ```bash
-poetry run python script.py
 poetry run jupyter lab
 ```
 
@@ -36,22 +37,32 @@ poetry run jupyter lab
 2. `Cmd+Shift+P` → "Python: Select Interpreter"
 3. Sélectionner l'environnement Poetry
 
-## Utilisation
-```bash
-# Lancer un notebook
-poetry run jupyter lab
-
-# Exécuter un script
-poetry run python script.py
-```
-
 ## Structure du projet
 ```
 projet_deep_learning/
+├── data/
+│   └── Train_clicks.csv          # Données d'entraînement
+├── src/
+│   └── notebook_final.ipynb      
+├── poetry.lock
 ├── pyproject.toml
-├── README.md
-└── notebooks/
+└── README.md
 ```
+
+## Utilisation
+```bash
+# Lancer Jupyter Lab
+poetry run jupyter lab
+
+# Ouvrir le notebook principal
+# → src/notebook_final.ipynb
+```
+
+## Modèles implémentés
+
+- **LightGBM** - Gradient boosting rapide
+- **RandomForest** - Ensemble de decision trees
+- **XGBoost** - Gradient boosting optimisé
 
 ## Commandes utiles
 ```bash
@@ -64,3 +75,9 @@ poetry add package_name
 # Voir l'environnement
 poetry env info
 ```
+
+## Notes techniques
+
+- **Gestion des NaN** : Les valeurs manquantes sont remplacées par -999
+- **Validation** : Cross-validation temporelle avec PredefinedSplit
+- **Horizons** : Prédictions à 0, 7, et 14 jours
